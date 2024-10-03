@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    <h1>Edit RSVP</h1>
+    <form action="/users/<%= user._id %>/rsvps/<%= rsvp._id %>?_method=PUT" method="POST">
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date"  value="<%= rsvp.date %>" required >
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="<%= rsvp.location %>" required>
+
+       <label for="guest">guests:</label>
+        <input type="number" min="0" name="guests" id="guest" value="<%= rsvp.guest %>" >
+
+       <button type="submit">Update RSVP</button>
+</form>
+</body>
+</html>
