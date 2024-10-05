@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List</title>
+</head>
+
+<body>
+
+  <h1>Guest List</h1>
+
+  <ul>
+    <% rsvps.forEach((rsvp) => { %>
+      <li>
+        <span class="first-name"><%= rsvp.firstName %></span>
+        <span class="last-name"><%= rsvp.lastName %></span>
+      </li>
+    <% }); %>
+  </ul>
+
+
+  <div class="add-guest-button">
+    <a href="/rsvp/new">Add New Guest</a>
+  </div>
+
+</body>
+</html>

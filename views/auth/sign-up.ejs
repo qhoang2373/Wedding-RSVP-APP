@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-Up</title>
+    <title>Sign Up</title>
 </head>
 <body>
-    <%- include('../partials/navbar.ejs')%>
-        <h1>Sign-up</h1>
-        <form action="/auth/sign-in" method="POST">
+
+        <h1>Sign Up!</h1>
+        <form action="/auth/sign-up" method="POST">
         <label for="username">Username</label>
         <input type="text" name="username" id="username">
 
         <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
 
-        <button type="submit">Sign Up</button>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required />
 
-        </form>
+      <button type="submit">Sign up</button>
 
+     </form>
 
-
-    
 </body>
 </html>
+
