@@ -8,14 +8,11 @@ const methodOverride = require('method-override')
 const path = require('path')
 const session = require('express-session')
 
-
+// =============== Controllers =================== //
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
-
 const authController = require('./controllers/auth.js');
-const rsvpsController = require('./controllers/rsvps.js');
-
-const Rsvp = require('./models/user.js');
+const rsvpController = require('./controllers/rsvps.js');
 
 //===============Mongoose================//
 
@@ -38,60 +35,19 @@ app.use(
     })
   );
 
+  // =============== routes =================== //
 app.use(passUserToView)
-
-app.get("/", async (req,res) => {
-    res.render('index.ejs')
-});
-
-
-app.get('/rsvp/new', (req,res) => {
-    res.render("rsvp/new.ejs")
-});
-
-app.get("/rsvp/:rsvpId", async (req, res) => {
-  try {
-    const rsvp = await Rsvp.findById(req.params.rsvpId); 
-    if (!rsvp) {
-      return res.status(404).send('RSVP not found'); 
-    }
-    res.render("rsvp/show.ejs", { rsvp });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
+app.get('/', (req, res) => {
+  if(req.session.user){
+      res.redirect(`/users/${req.session.user._id}/repertoire`)
+  }else {
+      res.render('index.ejs')
   }
-});
+})
 
-app.get('/rsvp/:rsvpId/edit', async(req,res) => {
-    const rsvps = await rsvp.findById(req.params.rsvpId);
-    res.render('rsvp/edit.ejs', { rsvp: rsvps});
-});
-
-app.put('/rsvp/:rsvpId', async (req, res) => {
-    if (req.body.willBeAttending === 'on') {
-      req.body.willBeAttending = true;
-    } else {
-      req.body.willBeAttending = false;
-    }
-    await rsvp.findByIdAndUpdate(req.params.rsvpId, req.body);
-    res.redirect(`/rsvp/${req.params.rsvpId}`);
-  });
-
-app.delete('/rsvp/:rsvpId', async(req,res) => {
-    await rsvp.findByIdAndDelete(req.params.rsvpId)
-    res.redirect('/rsvp')
-});
-
-app.post('/rsvp', async(req, res) => {
-    if(req.body.willBeAttending === 'on'){
-        req.body.willBeAttending = true
-    } else {
-        req.body.willBeAttending = false
-    }
-    await rsvp.create(req.body)
-    res.redirect('/rsvp');
-});
-
+app.user('/auth', authController)
+app.use(isSignedIn)
+app.use('/users/:userId/rsvp', rsvpController)
 
 
 app.listen(3000, () => {
