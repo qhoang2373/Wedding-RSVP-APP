@@ -37,7 +37,7 @@ router.get('/:rsvpId/edit', async (req, res) => {
   try{
       const currentUser = await User.findById(req.session.user._id)
       const rsvp = currentUser.rsvp.id(req.params.rsvpId)
-      res.render('wines/edit.ejs', {
+      res.render('rsvp/edit.ejs', {
           rsvp: rsvp
       })
   } catch (error) {
@@ -62,12 +62,11 @@ try {
   const rsvp = currentUser.rsvp.id(req,params.rsvpId)
   rsvp.set(req.body)
   await currentUser.save()
-  res.redirect('/users/${currentUser._id}/rsvp/${req.params.winesbyId}')
+  res.redirect('/users/${currentUser._id}/rsvp/${req.params.rsvpbyId}')
 } catch (error) {
   res.redirect('/')
 }
 })
-
 
 router.delete('/:rsvpId', async (req,res) => {
   try {
@@ -79,7 +78,5 @@ router.delete('/:rsvpId', async (req,res) => {
       res.redirect('/')
   }
 })
+
 module.exports = router
-
-
-
