@@ -12,11 +12,11 @@
   <h1>Guest List</h1>
 
   <ul>
-   
-      <li>
- 
-      </li>
-   
+      <% rsvp.forEach((rsvp)=>{ %>
+    <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>">
+    <li><%= rsvp.brand %> - <%= rsvp.varietal %></li>
+      <% }) %>    
+    </a>
   </ul>
 
   <div class="add-guest-button">
