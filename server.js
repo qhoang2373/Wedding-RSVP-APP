@@ -1,13 +1,13 @@
 //===============inputs================//
-const dotenv = require('dotenv');
-dotenv.config();
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const methodOverride = require('method-override');
-const morgan = require('morgan');
-const session = require('express-session');
-const Rsvps = require('./models/user.js');
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const morgan = require('morgan')
+const methodOverride = require('method-override')
+const path = require('path')
+const session = require('express-session')
+
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -38,7 +38,9 @@ app.use(
     })
   );
 
-  app.get("/", async (req,res) => {
+app.use(passUserToView)
+
+app.get("/", async (req,res) => {
     res.render('index.ejs')
 });
 
@@ -89,6 +91,12 @@ app.post('/rsvp', async(req, res) => {
     await rsvp.create(req.body)
     res.redirect('/rsvp');
 });
+
+
+
+app.listen(3000, () => {
+  console.log("Listening on port 3000");
+})
 
 
 

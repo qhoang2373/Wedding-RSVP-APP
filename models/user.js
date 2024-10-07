@@ -16,7 +16,7 @@ const rsvpSchema = new mongoose.Schema({
   plusOne: {
     type: String,
     willBeAttending: Boolean,
-  },
+  }
 });
 
 const userSchema = new mongoose.Schema({
