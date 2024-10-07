@@ -13,11 +13,10 @@ const rsvpSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  rsvps: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'RSVP'
+  plusOne: {
+    type: String,
+    willBeAttending: Boolean,
   },
-   // it might be guests: [userSchema], instead of rsvps up top
 });
 
 const userSchema = new mongoose.Schema({
@@ -29,19 +28,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    plusOne: {
-      willBeAttending: Boolean,
-    },
-    
-    // maybe fix this line right here, its either number or ,string 
-
-    // maybe add the firstName and lastName and admin from ERD
+    rsvp: [rsvpSchema],
 });
 
+const User = mongoose.model('User', userSchema);           
 
-// maybe put a const rsvp here like so, const Rsvp = mongoose.model('rsvp', rsvpSchema)
-
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+module.exports = User;  
 // const rsvp = mongoose.model('User', rsvpSchema);
+
 
