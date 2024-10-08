@@ -74,9 +74,9 @@ router.delete('/:rsvpId', async (req,res) => {
       currentUser.rsvp.id(req.params.rsvpId).deleteOne()
       await currentUser.save()
       res.redirect(`/users/${currentUser._id}/rsvp`)
-  } catch (error){
+  } catch (error) {
       res.redirect('/')
   }
 })
+module.exports = router
 
-module.exports = router;

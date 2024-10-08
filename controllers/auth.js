@@ -22,7 +22,7 @@ router.post('/sign-up', async (req, res) => {
     try {
       const userInDatabase = await User.findOne({ username: req.body.username })
       if (userInDatabase) {
-      return res.send('Username already exists. Try Again.')
+        return res.send('Username already exists. Try Again.')
     }
     if (req.body.password !== req.body.confirmPassword) {
         return res.send('Password must match')
