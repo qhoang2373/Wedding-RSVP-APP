@@ -50,7 +50,7 @@ router.post('/', async (req,res) => {
       const currentUser = await User.findById(req.session.user._id)
     currentUser.rsvp.push(req.body)
       await currentUser.save()
-      res.redirect('/user/${currentUser._id}/rsvp');
+      res.redirect(`/users/${currentUser._id}/rsvp`);
   } catch (error) {
       res.redirect('/')
   }
@@ -59,12 +59,12 @@ router.post('/', async (req,res) => {
 router.put('/:rsvpid', async (req, res) => {
 try {
   const currentUser = await User.findById(req.session.user._id)
-  const rsvp = currentUser.rsvp.id(req,params.rsvpId)
+  const rsvp = currentUser.rsvp.id(req.params.rsvpId)
   rsvp.set(req.body)
   await currentUser.save()
-  res.redirect('/users/${currentUser._id}/rsvp/${req.params.rsvpbyId}')
+    res.redirect(`/users/${currentUser._id}/rsvp/${req.params.rsvpId}`);
 } catch (error) {
-  res.redirect('/')
+    res.redirect('/')
 }
 })
 
@@ -73,7 +73,7 @@ router.delete('/:rsvpId', async (req,res) => {
       const currentUser = await User.findById(req.session.user._id)
       currentUser.rsvp.id(req.params.rsvpId).deleteOne()
       await currentUser.save()
-      res.redirect('/users/${currentUser._id}/rsvp')
+      res.redirect(`/users/${currentUser._id}/rsvp`)
   } catch (error){
       res.redirect('/')
   }

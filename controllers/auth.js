@@ -30,7 +30,7 @@ router.post('/sign-up', async (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, 10)
     req.body.password = hashedPassword
     const user = await User.create(req.body)
-    res.redirect('/auth/sign-in.ejs');
+    res.redirect('/auth/sign-in');
 
 } catch (error) {
     console.log(error);

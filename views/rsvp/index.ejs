@@ -14,7 +14,7 @@
   <ul>
       <% rsvp.forEach((rsvp)=>{ %>
     <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>">
-    <li><%= rsvp.brand %> - <%= rsvp.varietal %></li>
+    <li><%= rsvp.firstName %> - <%= rsvp.lastName %></li>
       <% }) %>    
     </a>
   </ul>

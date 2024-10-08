@@ -10,21 +10,16 @@
     <h1>Edit Your RSVP</h1>
             <form action="/rsvp" method="POST">
 
-                <label for="First name">First Name</label> 
-                <input type="text" id="name" name="name" required>
+                <label for="firstName">First Name</label> 
+                <input type="text" name="firstName" id="firstName" required>
         
-                <!-- try this if anything, <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" required> -->
         
-                <label for="Last name">Last Name</label> 
-                <input type="text" id="name" name="name" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" required>
+          
         
-                <!-- <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName"   
-         name="lastName" required>  -->
-        
-                <label for="plus One">Plus One:</label>
-                 <input type="text" id="rsvp" name="rsvp">
+                <label for="plusOne">Plus One:</label>
+                 <input type="text" id="plusOne" name="plusOne">
     
                  <button type="submit">Update</button>
 </form>

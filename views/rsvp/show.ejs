@@ -9,27 +9,28 @@
       
 <h1>Attendee</h1>
 
-<form action="/rsvp" method="POST">
     <main>
         <div class="attendee-details">
+            <h2>Guests</h2>
+                <div>
             <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" value="<%= attendee.firstName %>" disabled>
+            <input type="text" id="firstName" name="firstName" value="<%= rsvp.firstName %>" disabled>
     
             <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" value="<%= attendee.lastName %>" disabled>
+            <input type="text" id="lastName" name="lastName" value="<%= rsvp.lastName %>" disabled>
     
             <label for="plusOne">Plus One:</label>
-            <input type="text" id="plusOne" name="plusOne" value="<%= attendee.plusOne %>" disabled>
+            <input type="text" id="plusOne" name="plusOne" value="<%= rsvp.plusOne %>" disabled>
         </div>
     </main>
 
     <div class="buttons">
-        <% if (user.isAdmin) { %>
+        <form action="/users/<%= user._id %>/rsvp/<%= rsvp._id %>?_method=DELETE" method="POST">
             <button class="edit-button">Edit</button>
             <button class="delete-button">Delete</button>
-        <% } %>
+        </form>
+
     </div>
-</form>
 
 </body>
 </html>
