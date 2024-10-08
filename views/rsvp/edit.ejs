@@ -8,7 +8,8 @@
 
 <body>
     <h1>Edit Your RSVP</h1>
-            <form action="/rsvp" method="POST">
+
+    <form action="//users/<%= user._id %>/rsvp/<%= rsvp._id %>?_method=PUT" method="POST">
 
                 <label for="firstName">First Name</label> 
                 <input type="text" name="firstName" id="firstName" required>
@@ -22,6 +23,9 @@
                  <input type="text" id="plusOne" name="plusOne">
     
                  <button type="submit">Update</button>
-</form>
-</body>
+
+                
+                      
+        </form>
+    </body>
 </html>

@@ -10,7 +10,7 @@
 
     <h1>RSVP To Event!</h1>
 
-        <form action="/rsvp" method="POST">
+    <form action="/users/<%= user._id %>/rsvp" method="POST">
 
         <label for="First name">First Name</label> 
         <input type="text" id="name" name="name" required>
