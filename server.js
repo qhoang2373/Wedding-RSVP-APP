@@ -14,7 +14,6 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
 const rsvpController = require('./controllers/rsvps.js');
 
-
 //===============Mongoose================//
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -47,76 +46,13 @@ app.get('/', (req, res) => {
   }
 })
 
-
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/rsvp', rsvpController)
-// app.use('/rsvp', rsvpController)
 
   // =============== Port =================== //
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
