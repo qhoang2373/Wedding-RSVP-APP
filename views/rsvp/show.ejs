@@ -11,8 +11,8 @@
 
     <main>
         <div class="attendee-details">
-            <h2>Guests</h2
-        <div>
+            <h2>Guests</h2>
+       
             
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" value="<%= rsvp.firstName %>">
@@ -29,13 +29,11 @@
     <div class="buttons">
         
         <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>/edit" class="edit-button">Edit</a>
-        <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>/delete" class="delete-button">Delete</a>
+     
         
         <form action="/users/<%= user._id %>/rsvp/<%= rsvp._id %>?_method=DELETE" method="POST"> 
-    
+                <input type="Submit" value="Delete">
         </form>
-
-        
 
     </div>
 

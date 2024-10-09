@@ -13,12 +13,12 @@
 
   <ul>
       <% rsvp.forEach((rsvp)=>{ %>
-    <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>">
-    <li><%= rsvp.firstName %> - <%= rsvp.lastName %></li>
+        <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>">
+        <li><%= rsvp.firstName %> - <%= rsvp.lastName %></li>
       <% }) %>    
-    </a>
+      </a>
   </ul>
-  <form action="/users/<%= user._id %>/rsvp" method="POST"></form>
+    <form action="/users/<%= user._id %>/rsvp" method="POST"></form>
   <div class="add-guest-button">
     <a href="/rsvp/new">Add New Guest</a>
   </div>
