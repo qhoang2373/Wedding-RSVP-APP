@@ -8,14 +8,16 @@ const User = require('../models/user.js')
 
 router.get('/', async (req, res) => {
   try {
-      const currentUser = await User.findById(req.session.user._id)
-      res.render('rsvp/index.ejs', {
-          rsvp: currentUser.rsvp
-      })
-  } catch(error) {
-      res.redirect('/')
+    const currentUser = await User.findById(req.session.user._id).populate('rsvp');
+    console.log(currentUser.rsvp); 
+    res.render('rsvp/index.ejs', {
+      rsvp: currentUser.rsvp,
+      user: currentUser
+    });
+  } catch (error) {
+    res.redirect('/');
   }
-})
+});
 
 router.get('/new', async (req, res) => {
   res.render('rsvp/new.ejs')
@@ -59,10 +61,12 @@ router.post('/', async (req,res) => {
 router.put('/:rsvpid', async (req, res) => {
 try {
   const currentUser = await User.findById(req.session.user._id)
-  const rsvp = currentUser.rsvp.id(req.params.rsvpId)
-  rsvp.set(req.body)
+  console.log(currentUser)
+  const guest = currentUser.rsvp.id(req.params.rsvpid)
+  console.log(guest)
+  guest.set(req.body)
   await currentUser.save()
-    res.redirect(`/users/${currentUser._id}/rsvp/${req.params.rsvpId}`);
+    res.redirect(`/users/${currentUser._id}/rsvp/`);
 } catch (error) {
     res.redirect('/')
 }

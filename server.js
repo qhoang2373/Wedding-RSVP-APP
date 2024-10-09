@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/rsvp', rsvpController)
-app.use('/rsvp', rsvpController)
+// app.use('/rsvp', rsvpController)
 
   // =============== Port =================== //
 app.listen(3000, () => {
