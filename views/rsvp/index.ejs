@@ -1,21 +1,24 @@
+
+<a href="/auth/sign-out">Sign out</a>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheets" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+
+
     <title>Guest List</title>
 </head>
 
 <body>
-  <a href="/auth/sign-in">Sign In</a>
-  <a href="/auth/sign-up">Sign Up</a>
+  
   <h1>Guest List</h1>
 
   <ul>
       <% rsvp.forEach((person)=>{ %>
         <a href="/users/<%= user._id %>/rsvp/<%= person._id %>"> 
-        <li><%= person.firstName %> - <%= person.lastName %> - <%= person.plusOne %> </li>
+        <li><%= person.firstName %>  <%= person.lastName %> - <%= person.plusOne %> </li>
       <% }) %>    
       </a>
   </ul>

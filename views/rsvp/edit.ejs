@@ -1,26 +1,26 @@
+<a href="/auth/sign-in">Sign Out</a>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheets" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+
     <title>Edit RSVP</title>
 </head>
 
 <body>
     <h1>Edit Your RSVP</h1>
 
-    <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>/edit" class="edit-button">Edit</a>
+    <!-- <a href="/users/<%= user._id %>/rsvp/<%= rsvp._id %>/edit" class="edit-button">Edit</a> -->
     <form action="/users/<%= user._id %>/rsvp/<%= rsvp._id %>?_method=PUT" method="POST">
         
 
                 <label for="firstName">First Name</label> 
                 <input type="text" name="firstName" id="firstName" required>
         
-        
                 <label for="lastName">Last Name:</label>
                 <input type="text" name="lastName" id="lastName" required>
-          
         
                 <label for="plusOne">Plus One:</label>
                  <input type="text" id="plusOne" name="plusOne">

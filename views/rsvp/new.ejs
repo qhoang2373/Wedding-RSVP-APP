@@ -1,9 +1,11 @@
+<a href="/auth/sign-out">Sign out</a>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="stylesheets" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+
     <title>Create New RSVP</title>
 </head>
 
@@ -14,10 +16,10 @@
     <form action="/users/<%= user._id %>/rsvp" method="POST">
         
 
-        <label for="First name">First Name</label> 
+        <label for="First name">First Name:</label> 
         <input type="text" id="name" name="firstName" required>
 
-        <label for="Last name">Last Name</label> 
+        <label for="Last name">Last Name:</label> 
         <input type="text" id="name" name="lastName" required>
 
         <label for="plus One">Plus One:</label>

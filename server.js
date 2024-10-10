@@ -23,6 +23,7 @@ mongoose.connection.on('connected', () => {
 
 //===============Middleware=================//
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -49,6 +50,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/rsvp', rsvpController)
+
 
   // =============== Port =================== //
 app.listen(3000, () => {
