@@ -5,7 +5,7 @@
   This App was created because I was recently engaged. This app has full CRUD capabilities that will allow you to sign in, sign up, and sign out. Over time I will continue to build on this app and add new functionalities along the way such as adding a registry, song suggestions, etc. 
   
 ### Trello Link
-[trello]([https://www.npmjs.com/package/express](https://trello.com/b/Iqrs0e6u/project-2-planning))
+[Trello](https://trello.com/b/Iqrs0e6u/project-2-planning)
 
 ### Deployed Link
 [deployment]()
