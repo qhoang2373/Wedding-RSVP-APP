@@ -1,7 +1,7 @@
 
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Great Vibes', cursive;
     background-color: #f9f9f9;
     color: #333;
     margin: 0;
@@ -11,6 +11,10 @@ body {
 h1, h2 {
     color: #a64d79; 
     text-align: center;
+    border-bottom: 2px solid #a64d79; 
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+    font-size: 30px;
 }
 
 main {
@@ -96,6 +100,7 @@ nav a {
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
+    font-size: 20px;
 }
 
 nav a:hover {
@@ -109,7 +114,7 @@ nav a:hover {
 }
 
 .image-container {
-    background-image: url("https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("https://images.unsplash.com/photo-1534875611686-50fe95ae2624?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
     width: 50%;
@@ -117,8 +122,35 @@ nav a:hover {
     display: flex;
   }
   
-  .image-container {
+  .image-container2 {
     background-image: url("https://images.unsplash.com/photo-1522413452208-996ff3f3e740?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 350px;
+    display: flex;
+  }
+
+  .image-container3 {
+    background-image: url("https://images.unsplash.com/photo-1482575832494-771f74bf6857?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 350px;
+    display: flex;
+  }
+
+  .image-container4 {
+    background-image: url("https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 350px;
+    display: flex;
+  }
+
+  .image-container5 {
+    background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
     width: 50%;
