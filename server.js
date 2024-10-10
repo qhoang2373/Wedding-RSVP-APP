@@ -1,4 +1,3 @@
-//===============inputs================//
 require('dotenv').config()
 const express = require('express')
 const app = express()
@@ -8,20 +7,15 @@ const methodOverride = require('method-override')
 const path = require('path')
 const session = require('express-session')
 
-// =============== Controllers =================== //
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
 const rsvpController = require('./controllers/rsvps.js');
 
-//===============Mongoose================//
-
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB`);
 });
-
-//===============Middleware=================//
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
@@ -37,7 +31,6 @@ app.use(
   );
 app.use(passUserToView)
 
-  // =============== routes =================== //
 
 app.get('/', (req, res) => {
   if(req.session.user){
@@ -52,7 +45,7 @@ app.use(isSignedIn)
 app.use('/users/:userId/rsvp', rsvpController)
 
 
-  // =============== Port =================== //
+
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 })

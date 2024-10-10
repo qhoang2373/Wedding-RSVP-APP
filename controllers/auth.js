@@ -3,7 +3,6 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const User = require('../models/user.js')
 
-// ======== Sign Up, Sign in, Sign out =========// 
 router.get('/sign-up', (req, res) => {
     res.render('auth/sign-up.ejs')
 })
@@ -17,7 +16,7 @@ router.get('/sign-out', (req, res) => {
   res.redirect('/')
 })
 
-// ================= Create your user Account ============== //
+
 router.post('/sign-up', async (req, res) => {
     try {
       const userInDatabase = await User.findOne({ username: req.body.username })
@@ -38,7 +37,6 @@ router.post('/sign-up', async (req, res) => {
   }
 })
 
-// ================= User Sign-in ============== //
 router.post('/sign-in', async (req, res) => {
     try {
 
