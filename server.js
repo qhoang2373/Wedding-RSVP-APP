@@ -6,6 +6,7 @@ const morgan = require('morgan')
 const methodOverride = require('method-override')
 const path = require('path')
 const session = require('express-session')
+const port = process.env.PORT || 3000
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -46,7 +47,7 @@ app.use('/users/:userId/rsvp', rsvpController)
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Listening on port 3000");
 })
 
