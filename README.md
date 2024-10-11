@@ -8,7 +8,7 @@
 [Trello](https://trello.com/b/Iqrs0e6u/project-2-planning)
 
 ### Deployed Link
-[Deployed](https://wedding-rsvp-app-d009a8e4fdfc.herokuapp.com/)
+[Heroku](https://wedding-rsvp-app-d009a8e4fdfc.herokuapp.com/)
 
 #### User Stories
 * As a User (AAU), I want to see a landing page with a photo.
