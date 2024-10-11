@@ -18,20 +18,20 @@
 * AAU, I want to see a guestlist of who has RSVP'd
 * AAU, I want to be able to delete and edit anyone on the guestlist
 
-* #### Stretch Goals for next time
+#### Stretch Goals for next time
 * I want to include background music
 * I want to add a registry
 * I want to be able to add an option to see a photo gallery
 * I want to be able to improve the CSS
 
-* #### MVP Requirements
+#### MVP Requirements
 * AAU, I want to have a separate page for wines I want to try but haven't yet.
 * AAU, I want to mark wines as favorites and view these on their page.
 * AAU, I want to note the wine name and wine year.
 * AAU, I want to add a rating of 0-5 stars for each wine.
 * AAU, I want to add pictures of the wine bottle/label in case I want to purchase it again or avoid it.
 
-* #### Technologies Used
+#### Technologies Used
 * JavaScript
 * HTML
 * CSS
