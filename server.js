@@ -7,7 +7,6 @@ const methodOverride = require('method-override')
 const path = require('path')
 const session = require('express-session')
 const port = process.env.PORT || 3000
-
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');

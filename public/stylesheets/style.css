@@ -1,15 +1,15 @@
 body {
     font-family: 'Great Vibes', cursive;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
 
 h1, h2 {
-    color: #a64d79; 
+    color: var(--primary-accent-color); 
     text-align: center;
-    border-bottom: 2px solid #a64d79; 
+    border-bottom: 2px solid var(--primary-accent-color); 
     padding-bottom: 10px; 
     margin-bottom: 20px; 
     font-size: 30px;
@@ -27,8 +27,8 @@ label {
 
 button, .edit-button, .add-guest-button a, input[type="submit"] {
     display: flex;
-    background-color: #a64d79;
-    color: white;
+    background-color: var(--primary-accent-color);
+    color: var(--nav-text-color); 
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -43,19 +43,19 @@ button, .edit-button, .add-guest-button a, input[type="submit"] {
 }
 
 button:hover, .edit-button:hover, .add-guest-button a:hover {
-    background-color: #823356; 
+    background-color: var(--secondary-accent-color); 
 }
 
 input[type="text"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 5px 0 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border-color);
     border-radius: 4px;
 }
 
 input[type="submit"]:hover {
-    background-color: #823356;
+    background-color: var(--secondary-accent-color);
 }
 
 .attendee-details {
@@ -73,6 +73,7 @@ ul {
 
 ul li {
     background-color: #ffffff;
+    background-color: var(--card-bg-color);
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
@@ -80,19 +81,19 @@ ul li {
 }
 
 ul li:hover {
-    background-color: #f0f0f0;
+    background-color: var(--card-hover-bg-color);
 }
 
 
 nav {
-    background-color: #a64d79;
-    color: white;
+    background-color: var(--primary-accent-color);
+    color: var(--nav-text-color);
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: var(--nav-text-color);
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
@@ -100,9 +101,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #823356;
+    background-color: var(--secondary-accent-color);
 }
-
 
 .add-guest-button {
     text-align: center;
@@ -117,6 +117,17 @@ nav a:hover {
     height: 350px;
     display: flex;
   }
+
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-accent-color: #bb86fc;
+    --secondary-accent-color: #9e51f8;
+    --card-bg-color: #1e1e1e;
+    --card-hover-bg-color: #2c2c2c;
+    --input-border-color: #555;
+    --nav-text-color: #e0e0e0;
+}
   
   .image-container2 {
     background-image: url("https://images.unsplash.com/photo-1522413452208-996ff3f3e740?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
